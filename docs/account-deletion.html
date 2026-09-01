@@ -28,15 +28,20 @@
 </head>
 <body>
     <h1>Eliminar cuenta y datos de Memori</h1>
-    <p class="last-updated">Última actualización: 16 de agosto de 2026</p>
+    <p class="last-updated">Última actualización: 31 de agosto de 2026</p>
 
     <p>
         <strong>Memori</strong>, desarrollada por Jaime Téllez, te permite crear una cuenta
-        opcional (correo/contraseña o Google) desde Ajustes → "Respaldar mis datos". Esta
-        página explica cómo eliminar esa cuenta y qué pasa con tus datos al hacerlo.
+        opcional (correo/contraseña o Google) desde Ajustes → "Respaldar mis datos". Con sesión
+        iniciada, tus tareas, citas y categorías se sincronizan con nuestros servidores
+        (Firebase) para que estén disponibles en tus otros dispositivos. Esta página explica
+        cómo eliminar tu cuenta y todos los datos asociados, y también cómo borrar datos
+        puntuales sin necesidad de eliminar la cuenta.
     </p>
 
-    <h2>Opción 1: Eliminar tu cuenta desde la app (recomendado)</h2>
+    <h2>Eliminar tu cuenta y todos tus datos</h2>
+
+    <h3>Opción 1: Desde la app (recomendado)</h3>
     <ol>
         <li>Abre Memori en tu dispositivo</li>
         <li>Ve a <strong>Ajustes</strong></li>
@@ -45,29 +50,52 @@
         <li>Confirma tu contraseña (si iniciaste sesión con correo/contraseña) y confirma la
             eliminación</li>
     </ol>
-    <p>La cuenta se elimina de inmediato — no hay período de espera.</p>
+    <p>La cuenta y los datos sincronizados se eliminan de inmediato — no hay período de espera.</p>
 
-    <h2>Opción 2: Solicitar la eliminación por correo</h2>
+    <h3>Opción 2: Solicitar la eliminación por correo</h3>
     <p>
         Si no tienes acceso a la app, escríbenos desde el correo asociado a tu cuenta a
         <a href="mailto:support@jaimetellezb.com">support@jaimetellezb.com</a> pidiendo la
         eliminación de tu cuenta de Memori. La procesaremos en un plazo máximo de 7 días.
     </p>
 
-    <h2>Qué se elimina</h2>
+    <h2>Borrar datos puntuales sin eliminar tu cuenta</h2>
+    <p>
+        No hace falta borrar tu cuenta para borrar datos específicos — podés hacerlo vos mismo
+        desde la app en cualquier momento:
+    </p>
+    <ul>
+        <li><strong>Tareas:</strong> en la lista de tareas, deslizá el elemento hacia un
+            costado para borrarlo</li>
+        <li><strong>Citas:</strong> en la lista de citas, deslizá el elemento hacia un costado
+            para borrarlo</li>
+        <li><strong>Categorías:</strong> por ahora no se pueden borrar individualmente desde la
+            app — escribinos a <a href="mailto:support@jaimetellezb.com">support@jaimetellezb.com</a>
+            si querés que borremos una categoría específica</li>
+    </ul>
+    <p>
+        Si tenés sesión iniciada, el borrado se refleja también en nuestros servidores en cuanto
+        el dispositivo tiene conexión. Si usás Memori sin cuenta, el borrado es inmediato y sólo
+        local — nunca hubo copia en la nube.
+    </p>
+
+    <h2>Qué se elimina al borrar la cuenta</h2>
     <ul>
         <li>Tu cuenta de Firebase Authentication (correo, y nombre/foto de perfil si iniciaste
             sesión con Google)</li>
+        <li>Todas las tareas, citas y categorías que se hayan sincronizado a nuestros
+            servidores mientras tenías sesión iniciada</li>
     </ul>
 
     <h2>Qué se conserva</h2>
     <div class="note">
         <p>
-            Tus tareas, recordatorios, citas y categorías <strong>viven únicamente en tu
-            dispositivo</strong> — nunca se suben a nuestros servidores, así que eliminar la
-            cuenta no las borra ni las afecta. Si también quieres borrar esos datos, hazlo
-            directamente en la app (cada elemento se puede eliminar individualmente) o
-            desinstalando la app.
+            Tus tareas, citas y categorías también viven <strong>en tu dispositivo</strong>
+            (así funciona Memori sin necesidad de cuenta ni conexión). Eliminar la cuenta borra
+            la copia en nuestros servidores, pero <strong>no</strong> borra esos datos de tu
+            dispositivo — la app sigue funcionando normalmente sin cuenta después. Si también
+            querés borrar los datos locales, hazlo directamente en la app (cada tarea o cita se
+            puede eliminar individualmente, como se explica arriba) o desinstalando la app.
         </p>
     </div>
     <p>
