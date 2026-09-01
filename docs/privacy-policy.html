@@ -22,14 +22,16 @@
 </head>
 <body>
     <h1>Política de Privacidad de <span id="app-name">Memori</span></h1>
-    <p class="last-updated">Última actualización: 16 de agosto de 2026</p>
+    <p class="last-updated">Última actualización: 31 de agosto de 2026</p>
 
     <p>
         Respetamos tu privacidad. Esta aplicación funciona
         <strong>completamente en tu dispositivo y no requiere crear una cuenta</strong>.
         Crear una cuenta es siempre opcional, y se ofrece únicamente desde
-        Ajustes → "Respaldar mis datos". Esta política explica qué información se recopila
-        (muy poca) y cómo se usa.
+        Ajustes → "Respaldar mis datos". Si creás una cuenta, tus tareas, citas y categorías
+        también se sincronizan con nuestros servidores para que estén disponibles en tus otros
+        dispositivos — esta política explica qué información se recopila y cómo se usa en
+        ambos casos.
     </p>
 
     <h2>1. Información que Recopilamos</h2>
@@ -49,10 +51,8 @@
             "Continuar con Google")</li>
     </ul>
     <p>
-        En esta versión, crear una cuenta solo sirve para autenticarte — todavía no mueve
-        tus tareas, citas ni categorías a ningún servidor (ver sección 1.2 y 3). Cuando la
-        sincronización entre dispositivos esté disponible, actualizaremos esta política antes
-        de activarla.
+        Si además inicias sesión (no solo creás la cuenta), tus tareas, citas y categorías se
+        sincronizan a nuestros servidores — ver la sección 1.2.
     </p>
 
     <h3>1.2 Datos de la Aplicación</h3>
@@ -63,8 +63,16 @@
         <li>Categorías y etiquetas personalizadas</li>
     </ul>
     <p>
-        <strong>Estos datos no salen de tu dispositivo en ningún momento.</strong> No los
-        transmitimos a ningún servidor.
+        <strong>Sin cuenta, estos datos no salen de tu dispositivo en ningún momento</strong> —
+        no los transmitimos a ningún servidor.
+    </p>
+    <p>
+        <strong>Con sesión iniciada</strong>, además de guardarse en tu dispositivo, esta misma
+        información (título, descripción, fecha, ubicación de texto libre en el caso de citas,
+        nombre y color de categorías) se sincroniza a Firestore (Google Cloud), en un espacio
+        privado asociado únicamente a tu cuenta. Un dato queda siempre local y nunca se
+        sincroniza: el identificador interno de cada recordatorio (usado para programar la
+        notificación en tu propio dispositivo), porque no tiene sentido fuera de él.
     </p>
 
     <h3>1.3 Datos Técnicos</h3>
@@ -86,6 +94,8 @@
     <p>Usamos la información mínima descrita arriba para:</p>
     <ul>
         <li>Mostrar tus recordatorios y notificaciones (100% local, en tu dispositivo)</li>
+        <li>Sincronizar tus tareas, citas y categorías entre tus dispositivos (solo si creaste
+            una cuenta e iniciaste sesión)</li>
         <li>Diagnosticar y corregir fallos de la app (reportes de Crashlytics)</li>
     </ul>
     <p>No usamos tus datos para publicidad ni analítica de comportamiento.</p>
@@ -101,8 +111,14 @@
     <p>
         Si creas una cuenta, tus credenciales de autenticación (correo, o los datos de tu
         cuenta de Google descritos en la sección 1.1) las almacena y gestiona Firebase
-        Authentication (Google), no nuestros propios servidores. Tus tareas, citas y
-        categorías siguen almacenándose únicamente en tu dispositivo.
+        Authentication (Google), no nuestros propios servidores.
+    </p>
+    <p>
+        Si además iniciás sesión, tus tareas, citas y categorías se guardan también en
+        Firestore (la base de datos en la nube de Firebase/Google), en un documento privado
+        asociado a tu cuenta. El acceso está restringido por reglas de seguridad de Firestore
+        que sólo permiten leer o escribir ese documento a tu propia cuenta autenticada — nadie
+        más, ni siquiera otro usuario de Memori, puede acceder a él.
     </p>
 
     <h2>4. Compartir Información</h2>
@@ -117,6 +133,10 @@
         <li><strong>Firebase Authentication (Google):</strong> si eliges crear una cuenta,
             gestiona tu correo o los datos de tu cuenta de Google descritos en la sección 1.1,
             únicamente para autenticarte. Sujeto a la
+            <a href="https://policies.google.com/privacy">política de privacidad de Google</a>.</li>
+        <li><strong>Firestore (Google):</strong> si iniciás sesión, almacena tus tareas, citas
+            y categorías sincronizadas, en un espacio accesible únicamente por tu cuenta.
+            Sujeto a la
             <a href="https://policies.google.com/privacy">política de privacidad de Google</a>.</li>
         <li><strong>Requisitos legales:</strong> si es requerido por ley o para proteger
             nuestros derechos.</li>
@@ -135,31 +155,45 @@
 
     <h2>6. Seguridad</h2>
     <p>
-        Tus tareas, citas y categorías nunca salen de tu dispositivo, así que no hay tránsito
-        de red que asegurar para ellas. Los reportes de fallos (Crashlytics) y, si creaste una
-        cuenta, tus credenciales de autenticación (Firebase Authentication), viajan cifrados
-        en tránsito (HTTPS/TLS) y se gestionan con la infraestructura de seguridad de Google.
+        Sin cuenta, tus tareas, citas y categorías nunca salen de tu dispositivo, así que no
+        hay tránsito de red que asegurar para ellas. Los reportes de fallos (Crashlytics) y,
+        si creaste una cuenta, tus credenciales de autenticación (Firebase Authentication) y
+        — si iniciaste sesión — tus tareas, citas y categorías sincronizadas (Firestore),
+        viajan cifrados en tránsito (HTTPS/TLS) y se gestionan con la infraestructura de
+        seguridad de Google, protegidos por reglas de acceso que restringen cada cuenta a sus
+        propios datos.
     </p>
 
     <h2>7. Tus Derechos</h2>
     <p>
-        Como tus datos viven en tu dispositivo, tú tienes control directo sobre ellos en
-        todo momento: puedes exportarlos, editarlos o borrarlos desde la propia app, sin
-        necesidad de solicitárnoslo.
+        Tienes control directo sobre tus datos en todo momento: puedes exportarlos, editarlos
+        o borrarlos desde la propia app, sin necesidad de solicitárnoslo — tanto los que están
+        sólo en tu dispositivo como los que se sincronizaron a nuestros servidores.
     </p>
     <p>
-        Si creaste una cuenta, puedes cerrar sesión en cualquier momento desde Ajustes. Para
-        eliminar por completo tu cuenta (y los datos de autenticación asociados en Firebase),
-        escríbenos a <a href="mailto:support@jaimetellezb.com">support@jaimetellezb.com</a>.
+        Si creaste una cuenta, puedes cerrar sesión en cualquier momento desde Ajustes (esto no
+        borra nada, ni local ni sincronizado — sólo detiene la sincronización). Para eliminar
+        por completo tu cuenta, tus datos de autenticación y todo lo que hayas sincronizado a
+        Firestore, hazlo desde Ajustes → tu cuenta → "Eliminar cuenta", o escribinos a
+        <a href="mailto:support@jaimetellezb.com">support@jaimetellezb.com</a> si no tenés
+        acceso a la app — ver el detalle completo en la
+        <a href="account-deletion.html">página de eliminación de cuenta y datos</a>.
     </p>
 
     <h2>8. Retención de Datos</h2>
     <p>
-        Tus tareas, citas y categorías nunca están en un servidor, así que no aplica
-        retención sobre ellas. Podemos retener reportes de fallos anónimos (Crashlytics)
-        según la política de retención de Google. Si creaste una cuenta, tus datos de
-        autenticación se conservan en Firebase mientras la cuenta exista, hasta que la
-        elimines (ver sección 7).
+        Sin cuenta, tus tareas, citas y categorías nunca están en un servidor, así que no
+        aplica retención sobre ellas. Podemos retener reportes de fallos anónimos
+        (Crashlytics) según la política de retención de Google. Si creaste una cuenta, tus
+        datos de autenticación se conservan en Firebase mientras la cuenta exista.
+    </p>
+    <p>
+        Si iniciaste sesión, tus tareas, citas y categorías sincronizadas se conservan en
+        Firestore mientras existan en al menos uno de tus dispositivos. Al borrar un elemento
+        específico, dejamos de usarlo y de mostrarlo en todos tus dispositivos sincronizados de
+        inmediato. Al eliminar tu cuenta, se borra por completo — de forma inmediata — todo lo
+        que hayas sincronizado a Firestore (ver sección 7 y la
+        <a href="account-deletion.html">página de eliminación de cuenta y datos</a>).
     </p>
 
     <h2>9. Menores de Edad</h2>
