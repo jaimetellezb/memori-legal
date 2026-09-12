@@ -22,14 +22,14 @@
 </head>
 <body>
     <h1>Política de Privacidad de <span id="app-name">Memori</span></h1>
-    <p class="last-updated">Última actualización: 31 de agosto de 2026</p>
+    <p class="last-updated">Última actualización: 11 de septiembre de 2026</p>
 
     <p>
         Respetamos tu privacidad. Esta aplicación funciona
         <strong>completamente en tu dispositivo y no requiere crear una cuenta</strong>.
         Crear una cuenta es siempre opcional, y se ofrece únicamente desde
-        Ajustes → "Respaldar mis datos". Si creás una cuenta, tus tareas, citas y categorías
-        también se sincronizan con nuestros servidores para que estén disponibles en tus otros
+        Ajustes → "Respaldar mis datos". Si creás una cuenta, tus tareas, citas, categorías y
+        notas también se sincronizan con nuestros servidores para que estén disponibles en tus otros
         dispositivos — esta política explica qué información se recopila y cómo se usa en
         ambos casos.
     </p>
@@ -51,16 +51,17 @@
             "Continuar con Google")</li>
     </ul>
     <p>
-        Si además inicias sesión (no solo creás la cuenta), tus tareas, citas y categorías se
-        sincronizan a nuestros servidores — ver la sección 1.2.
+        Si además inicias sesión (no solo creás la cuenta), tus tareas, citas, categorías y
+        notas se sincronizan a nuestros servidores — ver la sección 1.2.
     </p>
 
     <h3>1.2 Datos de la Aplicación</h3>
-    <p>Las tareas, recordatorios y citas que creas se generan y se guardan en tu dispositivo:</p>
+    <p>Las tareas, recordatorios, citas y notas que creas se generan y se guardan en tu dispositivo:</p>
     <ul>
         <li>Tareas y recordatorios</li>
         <li>Citas y compromisos</li>
         <li>Categorías y etiquetas personalizadas</li>
+        <li>Notas de texto libre, con su color y orden</li>
     </ul>
     <p>
         <strong>Sin cuenta, estos datos no salen de tu dispositivo en ningún momento</strong> —
@@ -69,7 +70,8 @@
     <p>
         <strong>Con sesión iniciada</strong>, además de guardarse en tu dispositivo, esta misma
         información (título, descripción, fecha, ubicación de texto libre en el caso de citas,
-        nombre y color de categorías) se sincroniza a Firestore (Google Cloud), en un espacio
+        nombre y color de categorías, contenido, color y orden en el caso de notas) se
+        sincroniza a Firestore (Google Cloud), en un espacio
         privado asociado únicamente a tu cuenta. Un dato queda siempre local y nunca se
         sincroniza: el identificador interno de cada recordatorio (usado para programar la
         notificación en tu propio dispositivo), porque no tiene sentido fuera de él.
@@ -94,15 +96,15 @@
     <p>Usamos la información mínima descrita arriba para:</p>
     <ul>
         <li>Mostrar tus recordatorios y notificaciones (100% local, en tu dispositivo)</li>
-        <li>Sincronizar tus tareas, citas y categorías entre tus dispositivos (solo si creaste
-            una cuenta e iniciaste sesión)</li>
+        <li>Sincronizar tus tareas, citas, categorías y notas entre tus dispositivos (solo si
+            creaste una cuenta e iniciaste sesión)</li>
         <li>Diagnosticar y corregir fallos de la app (reportes de Crashlytics)</li>
     </ul>
     <p>No usamos tus datos para publicidad ni analítica de comportamiento.</p>
 
     <h2>3. Almacenamiento de Datos</h2>
     <p>
-        Tus tareas, recordatorios y citas se almacenan localmente en tu dispositivo, en una
+        Tus tareas, recordatorios, citas y notas se almacenan localmente en tu dispositivo, en una
         base de datos SQLite gestionada por la app. Esto permite que funcione completamente
         sin conexión a internet. Esta base de datos usa la protección estándar del sistema
         operativo de tu dispositivo (aislamiento por app); no aplicamos una capa adicional de
@@ -114,7 +116,7 @@
         Authentication (Google), no nuestros propios servidores.
     </p>
     <p>
-        Si además iniciás sesión, tus tareas, citas y categorías se guardan también en
+        Si además iniciás sesión, tus tareas, citas, categorías y notas se guardan también en
         Firestore (la base de datos en la nube de Firebase/Google), en un documento privado
         asociado a tu cuenta. El acceso está restringido por reglas de seguridad de Firestore
         que sólo permiten leer o escribir ese documento a tu propia cuenta autenticada — nadie
@@ -134,8 +136,8 @@
             gestiona tu correo o los datos de tu cuenta de Google descritos en la sección 1.1,
             únicamente para autenticarte. Sujeto a la
             <a href="https://policies.google.com/privacy">política de privacidad de Google</a>.</li>
-        <li><strong>Firestore (Google):</strong> si iniciás sesión, almacena tus tareas, citas
-            y categorías sincronizadas, en un espacio accesible únicamente por tu cuenta.
+        <li><strong>Firestore (Google):</strong> si iniciás sesión, almacena tus tareas, citas,
+            categorías y notas sincronizadas, en un espacio accesible únicamente por tu cuenta.
             Sujeto a la
             <a href="https://policies.google.com/privacy">política de privacidad de Google</a>.</li>
         <li><strong>Requisitos legales:</strong> si es requerido por ley o para proteger
@@ -155,10 +157,10 @@
 
     <h2>6. Seguridad</h2>
     <p>
-        Sin cuenta, tus tareas, citas y categorías nunca salen de tu dispositivo, así que no
-        hay tránsito de red que asegurar para ellas. Los reportes de fallos (Crashlytics) y,
+        Sin cuenta, tus tareas, citas, categorías y notas nunca salen de tu dispositivo, así que
+        no hay tránsito de red que asegurar para ellas. Los reportes de fallos (Crashlytics) y,
         si creaste una cuenta, tus credenciales de autenticación (Firebase Authentication) y
-        — si iniciaste sesión — tus tareas, citas y categorías sincronizadas (Firestore),
+        — si iniciaste sesión — tus tareas, citas, categorías y notas sincronizadas (Firestore),
         viajan cifrados en tránsito (HTTPS/TLS) y se gestionan con la infraestructura de
         seguridad de Google, protegidos por reglas de acceso que restringen cada cuenta a sus
         propios datos.
@@ -182,13 +184,13 @@
 
     <h2>8. Retención de Datos</h2>
     <p>
-        Sin cuenta, tus tareas, citas y categorías nunca están en un servidor, así que no
+        Sin cuenta, tus tareas, citas, categorías y notas nunca están en un servidor, así que no
         aplica retención sobre ellas. Podemos retener reportes de fallos anónimos
         (Crashlytics) según la política de retención de Google. Si creaste una cuenta, tus
         datos de autenticación se conservan en Firebase mientras la cuenta exista.
     </p>
     <p>
-        Si iniciaste sesión, tus tareas, citas y categorías sincronizadas se conservan en
+        Si iniciaste sesión, tus tareas, citas, categorías y notas sincronizadas se conservan en
         Firestore mientras existan en al menos uno de tus dispositivos. Al borrar un elemento
         específico, dejamos de usarlo y de mostrarlo en todos tus dispositivos sincronizados de
         inmediato. Al eliminar tu cuenta, se borra por completo — de forma inmediata — todo lo
