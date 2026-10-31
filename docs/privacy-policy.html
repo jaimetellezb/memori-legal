@@ -22,13 +22,13 @@
 </head>
 <body>
     <h1>Política de Privacidad de <span id="app-name">Memori</span></h1>
-    <p class="last-updated">Última actualización: 22 de octubre de 2026</p>
+    <p class="last-updated">Última actualización: 31 de octubre de 2026</p>
 
     <p>
         Respetamos tu privacidad. Esta aplicación funciona
         <strong>completamente en tu dispositivo y no requiere crear una cuenta</strong>.
         Crear una cuenta es siempre opcional, y se ofrece únicamente desde
-        Ajustes → "Respaldar mis datos". Si creás una cuenta, tus tareas, citas, categorías y
+        Ajustes → "Respaldar mis datos". Si creas una cuenta, tus tareas, citas, categorías y
         notas también se sincronizan con nuestros servidores para que estén disponibles en tus otros
         dispositivos — esta política explica qué información se recopila y cómo se usa en
         ambos casos.
@@ -51,7 +51,7 @@
             "Continuar con Google")</li>
     </ul>
     <p>
-        Si además inicias sesión (no solo creás la cuenta), tus tareas, citas, categorías y
+        Si además inicias sesión (no solo creas la cuenta), tus tareas, citas, categorías y
         notas se sincronizan a nuestros servidores — ver la sección 1.2.
     </p>
 
@@ -130,6 +130,29 @@
             de fallos: no sale de tu dispositivo.</li>
     </ul>
 
+    <h3>1.6 Verificación de la app (Firebase App Check)</h3>
+    <p>
+        Para proteger tu respaldo, cuando la app se comunica con nuestros servidores para
+        iniciar sesión o sincronizar tus datos usa <strong>Firebase App Check</strong> con la
+        <strong>API de Play Integrity</strong> de Google. Así se comprueba que la solicitud
+        viene de la versión original de Memori, instalada desde Google Play en un dispositivo
+        Android genuino, y no de otro programa que intente usar nuestros servidores.
+    </p>
+    <ul>
+        <li>Google Play services genera la comprobación en tu dispositivo. Incluye datos de la
+            app (nombre del paquete, versión y certificado de firma), si la app se instaló
+            desde Google Play y una evaluación de la integridad del dispositivo.</li>
+        <li><strong>No incluye tus tareas, citas, categorías ni notas</strong>, ni tu correo
+            o los datos de tu cuenta.</li>
+        <li>Se usa únicamente por seguridad y para prevenir el abuso de nuestros servidores,
+            nunca para publicidad ni analítica.</li>
+        <li>Google trata estos datos como se describe en sus
+            <a href="https://developer.android.com/google/play/integrity/terms">condiciones
+            de la API de Play Integrity</a> y en la
+            <a href="https://policies.google.com/privacy">política de privacidad de Google</a>:
+            viajan cifrados y se borran después de un período fijo.</li>
+    </ul>
+
     <h2>2. Cómo Usamos tu Información</h2>
     <p>Usamos la información mínima descrita arriba para:</p>
     <ul>
@@ -139,6 +162,8 @@
         <li>Sincronizar tus tareas, citas, categorías y notas entre tus dispositivos (solo si
             creaste una cuenta e iniciaste sesión)</li>
         <li>Diagnosticar y corregir fallos de la app (reportes de Crashlytics)</li>
+        <li>Comprobar que las solicitudes a nuestros servidores vienen de la app original,
+            para proteger tu respaldo (Firebase App Check; ver la sección 1.6)</li>
         <li>Recordar en tu dispositivo que ya donaste, para agradecerte (ver la sección 1.5)</li>
     </ul>
     <p>No usamos tus datos para publicidad ni analítica de comportamiento.</p>
@@ -157,7 +182,7 @@
         Authentication (Google), no nuestros propios servidores.
     </p>
     <p>
-        Si además iniciás sesión, tus tareas, citas, categorías y notas se guardan también en
+        Si además inicias sesión, tus tareas, citas, categorías y notas se guardan también en
         Firestore (la base de datos en la nube de Firebase/Google), en un documento privado
         asociado a tu cuenta. El acceso está restringido por reglas de seguridad de Firestore
         que sólo permiten leer o escribir ese documento a tu propia cuenta autenticada — nadie
@@ -177,9 +202,13 @@
             gestiona tu correo o los datos de tu cuenta de Google descritos en la sección 1.1,
             únicamente para autenticarte. Sujeto a la
             <a href="https://policies.google.com/privacy">política de privacidad de Google</a>.</li>
-        <li><strong>Firestore (Google):</strong> si iniciás sesión, almacena tus tareas, citas,
+        <li><strong>Firestore (Google):</strong> si inicias sesión, almacena tus tareas, citas,
             categorías y notas sincronizadas, en un espacio accesible únicamente por tu cuenta.
             Sujeto a la
+            <a href="https://policies.google.com/privacy">política de privacidad de Google</a>.</li>
+        <li><strong>Firebase App Check y Play Integrity (Google):</strong> al iniciar sesión
+            o sincronizar, verifican que la solicitud viene de la app original, según se
+            describe en la sección 1.6. Sujeto a la
             <a href="https://policies.google.com/privacy">política de privacidad de Google</a>.</li>
         <li><strong>Requisitos legales:</strong> si es requerido por ley o para proteger
             nuestros derechos.</li>
@@ -217,8 +246,8 @@
         Si creaste una cuenta, puedes cerrar sesión en cualquier momento desde Ajustes (esto no
         borra nada, ni local ni sincronizado — sólo detiene la sincronización). Para eliminar
         por completo tu cuenta, tus datos de autenticación y todo lo que hayas sincronizado a
-        Firestore, hazlo desde Ajustes → tu cuenta → "Eliminar cuenta", o escribinos a
-        <a href="mailto:support@jaimetellezb.com">support@jaimetellezb.com</a> si no tenés
+        Firestore, hazlo desde Ajustes → tu cuenta → "Eliminar cuenta", o escríbenos a
+        <a href="mailto:support@jaimetellezb.com">support@jaimetellezb.com</a> si no tienes
         acceso a la app — ver el detalle completo en la
         <a href="account-deletion.html">página de eliminación de cuenta y datos</a>.
     </p>
